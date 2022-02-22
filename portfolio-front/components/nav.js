@@ -4,6 +4,8 @@ import cn from "classnames";
 import { useRouter } from "next/router";
 
 export default function Nav() {
+  const router = useRouter();
+
   return (
     <>
       <input type="checkbox" className={styles.toggleMenu} />
@@ -17,7 +19,9 @@ export default function Nav() {
         <span className={styles.navTitle}>MENU</span>
         <nav>
           <Link href="/">
-            <a className={cn({ [styles.active]: "/" == "/" })}>home</a>
+            <a className={cn({ [styles.active]: router.pathname == "/" })}>
+              home
+            </a>
           </Link>
           <span></span>
           <Link href="/projects">
