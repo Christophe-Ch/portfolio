@@ -1,0 +1,97 @@
+@import "../variables.scss";
+
+.sliderContainer {
+  overflow: hidden;
+  padding-bottom: 2rem;
+
+  .slider {
+    overflow: visible !important;
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      box-sizing: border-box;
+      width: 95% !important;
+
+      background: $mainColor;
+      color: $dark;
+      border-radius: 2rem;
+      padding: 2.5rem;
+      margin: 2.5%;
+
+      text-align: left;
+
+      .title {
+        display: block;
+
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      .date {
+        font-size: 0.8rem;
+      }
+
+      .body {
+        font-size: 1rem;
+        padding: 3rem 0;
+
+        p {
+          font-size: 1rem;
+        }
+
+        .link {
+          margin-top: 1rem;
+          display: block;
+          color: $dark !important;
+          text-decoration: underline;
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .skills {
+        span {
+          padding: 0.5rem 1.5rem;
+          margin-right: 1rem;
+          background: $action;
+          color: $mainColor;
+          border-radius: 1.2rem;
+
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: $desktop) {
+  .sliderContainer {
+    .slider {
+      .slide {
+        width: 85% !important;
+        margin: 7.5%;
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .date {
+          font-size: 1rem;
+        }
+
+        .body {
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

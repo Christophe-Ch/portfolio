@@ -1,0 +1,134 @@
+@import "./variables.scss";
+
+html {
+  font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+  color: white;
+  overflow-x: hidden;
+
+  font-weight: 200;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+
+  padding: 0 2rem;
+}
+
+a {
+  color: $mainColor;
+  text-decoration: none;
+
+  &.outline {
+    border: 1px solid $mainColor;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+
+  &.full {
+    border: 1px solid $action;
+    background: $action;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 10px $dark;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.wireframe-text {
+  font-size: 3.5rem;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $subtitleColor;
+  font-weight: bold;
+  user-select: none;
+
+  transition: top 0.3s ease-out;
+}
+
+.swiper {
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-pagination {
+    bottom: -1.5rem !important;
+
+    .swiper-pagination-bullet {
+      border: 2px solid $mainColor;
+
+      &.swiper-pagination-bullet-active {
+        background: $mainColor;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  .wireframe-text {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  html {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    padding: 5rem 6vw;
+  }
+
+  .wireframe-text {
+    font-size: 5rem;
+  }
+
+  .swiper {
+    .swiper-button-prev {
+      display: inline;
+      left: 0;
+      color: $mainColor;
+    }
+
+    .swiper-button-next {
+      display: inline;
+      right: 0;
+      color: $mainColor;
+    }
+  }
+}

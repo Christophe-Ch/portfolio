@@ -9,7 +9,7 @@
   right: 2rem;
 
   margin: 0;
-  position: absolute;
+  position: fixed;
   opacity: 0;
 
   &:checked {
@@ -54,6 +54,7 @@
     width: 100%;
     background: $mainColor;
     border-radius: 10px;
+    mix-blend-mode: difference;
 
     &:nth-child(1) {
       transform-origin: 0% 0%;

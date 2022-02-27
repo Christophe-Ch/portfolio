@@ -1,0 +1,208 @@
+@import "./variables.scss";
+
+.textWithSubtitle {
+  position: relative;
+  padding: 0 2rem;
+  margin: 6rem 0;
+
+  .subtitle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+
+    font-weight: bold;
+
+    line-height: 2rem;
+
+    &.left {
+      text-align: left;
+      left: 0;
+      transform: translate(2rem, -50%);
+    }
+
+    &.right {
+      text-align: right;
+      left: unset;
+      right: 0;
+      transform: translate(-2rem, -65%);
+    }
+  }
+}
+
+.firstSlideContainer {
+  height: 100vh;
+  width: 100vw;
+  min-height: 30rem;
+
+  background: linear-gradient($dark, $primaryGrey);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .titleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    span {
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+
+    h1 {
+      margin: 2rem 0;
+    }
+  }
+
+  .scrollInfoContainer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      font-weight: 100;
+      margin-bottom: 1rem;
+    }
+
+    .arrowDown {
+      fill: $mainColor;
+    }
+  }
+}
+
+.whoAmIContainer {
+  background: linear-gradient($primaryGrey, 90%, $dark);
+  padding: 5rem 0;
+}
+
+.whatDoIDoContainer {
+  background: $dark;
+  padding: 5rem 0;
+
+  .actionsContainer {
+    margin: auto;
+    width: fit-content;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+
+      a {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .textWithSubtitle {
+    margin: 6vw;
+    padding: 0 4vw;
+
+    .subtitle {
+      &.left {
+        transform: translateY(-50%);
+      }
+
+      &.bottom {
+        top: unset;
+        bottom: 0;
+        transform: translateY(50%);
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .firstSlideContainer {
+    justify-content: left;
+
+    .titleContainer {
+      left: 0;
+      transform: translateY(-50%);
+
+      text-align: left;
+      align-items: baseline;
+      margin-left: 6vw;
+
+      span {
+        font-size: 2.5rem;
+      }
+
+      a {
+        position: relative;
+        margin-left: auto;
+      }
+    }
+
+    .scrollInfoContainer {
+      bottom: 2rem;
+    }
+  }
+
+  .whoAmIContainer {
+    .contentContainer {
+      display: flex;
+      padding-bottom: 5rem;
+
+      .textWithSubtitle {
+        display: inline-block;
+        width: calc(50% - 20vw);
+
+        .subtitle {
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      .sliderContainer {
+        width: calc(50% - 12vw);
+        display: inline-block;
+
+        padding: 0 6vw;
+      }
+    }
+  }
+
+  .whatDoIDoContainer {
+    position: relative;
+
+    .paragraphsContainer {
+      display: flex;
+    }
+
+    .actionsContainer {
+      .actions {
+        flex-direction: row;
+
+        a {
+          margin: 0.8rem 2rem;
+        }
+      }
+    }
+  }
+}
