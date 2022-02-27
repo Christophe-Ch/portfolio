@@ -32,7 +32,10 @@
       }
 
       .date {
+        text-transform: capitalize;
         font-size: 0.8rem;
+        display: block;
+        margin-top: .5rem;
       }
 
       .body {

@@ -63,7 +63,11 @@ p {
 
 .swiper {
   .swiper-wrapper {
-    align-items: center;
+    align-items: stretch;
+
+    .swiper-slide {
+      height: auto;
+    }
   }
 
   .swiper-button-prev {

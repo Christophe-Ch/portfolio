@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function Slider() {
+export default function Slider(props) {
   return (
     <div className={styles.sliderContainer}>
       <Swiper
@@ -16,51 +16,50 @@ export default function Slider() {
         navigation
         modules={[Pagination, Navigation]}
       >
-        <SwiperSlide className={styles.slide}>
-          <div>
-            <span className={styles.title}>company</span>
-            <span className={styles.date}>September 2020 - December 2020</span>
-          </div>
+        {props.items.map((item) => (
+          <SwiperSlide className={styles.slide} key={item.slug}>
+            <div>
+              <span className={styles.title}>{item.title}</span>
+              <span className={styles.date}>
+                {parseDates(item.from, item.to)}
+              </span>
+            </div>
 
-          <div className={styles.body}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <Link href="/">
-              <a className={styles.link}>Read more</a>
-            </Link>
-          </div>
+            <div className={styles.body}>
+              <p>{item.excerpt}</p>
+              <Link href={`/${item.type}/${item.slug}`}>
+                <a className={styles.link}>Read more</a>
+              </Link>
+            </div>
 
-          <div className={styles.skills}>
-            <span>skill 1</span>
-            <span>skill 2</span>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.slide}>
-          <div>
-            <span className={styles.title}>company</span>
-            <span className={styles.date}>September 2020 - December 2020</span>
-          </div>
-
-          <div className={styles.body}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <Link href="/">
-              <a className={styles.link}>Read more</a>
-            </Link>
-          </div>
-
-          <div className={styles.skills}>
-            <span>skill 1</span>
-            <span>skill 2</span>
-          </div>
-        </SwiperSlide>
+            {item.skills && item.skills.length > 0 && (
+              <div className={styles.skills}>
+                {item.skills.map((skill) => (
+                  <span key={skill.name}>{skill.name}</span>
+                ))}
+              </div>
+            )}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
 }
+
+const parseDates = (from, to) => {
+  const fromString = new Date(from).toLocaleDateString("fr-FR", {
+    month: "long",
+    year: "numeric",
+  });
+
+  if (to) {
+    const toString = new Date(to).toLocaleDateString("fr-FR", {
+      month: "long",
+      year: "numeric",
+    });
+
+    return `${fromString} - ${toString}`;
+  }
+
+  return fromString;
+};

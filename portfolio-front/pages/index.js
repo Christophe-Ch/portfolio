@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "../styles/home.module.scss";
 import Slider from "../components/slider";
+import { fetchAPI } from "../lib/api";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <div className={styles.firstSlideContainer}>
@@ -50,7 +51,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.sliderContainer}>
-            <Slider />
+            <Slider items={props.experiences} />
           </div>
         </div>
       </div>
@@ -118,4 +119,24 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const result = await fetchAPI("/experiences");
+
+  return {
+    props: {
+      experiences: result.data.map((experience) => {
+        return {
+          title: experience.attributes.company,
+          slug: experience.attributes.slug,
+          excerpt: experience.attributes.excerpt,
+          from: experience.attributes.from,
+          to: experience.attributes.to,
+          type: "experiences",
+          skills: [],
+        };
+      }),
+    },
+  };
 }

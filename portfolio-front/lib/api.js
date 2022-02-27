@@ -6,7 +6,7 @@ import qs from "qs";
  * @returns {string} Full API URL
  */
 export function getStrapiURL(path = "") {
-  return `${process.env.API_URL}${path};`;
+  return `${process.env.API_URL}${path}`;
 }
 
 /**
