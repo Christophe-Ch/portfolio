@@ -1,6 +1,5 @@
 import { fetchAPI } from "../../lib/api";
 import RichContentLayout from "../../components/richContentLayout";
-import { useEffect } from "react";
 
 export default function Experience({ experience }) {
   return <RichContentLayout content={experience} />;

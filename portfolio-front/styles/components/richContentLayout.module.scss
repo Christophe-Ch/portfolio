@@ -24,6 +24,11 @@
       max-width: 75%;
       margin: 1rem 0;
     }
+
+    h2 {
+      padding: 0;
+      margin-top: 5rem;
+    }
   }
 
   .link {
@@ -39,6 +44,8 @@
     }
 
     .body {
+      width: 80%;
+
       p {
         margin: 3rem 0;
       }
