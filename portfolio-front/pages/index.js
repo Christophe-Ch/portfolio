@@ -3,7 +3,7 @@ import styles from "../styles/home.module.scss";
 import Slider from "../components/slider";
 import { fetchAPI } from "../lib/api";
 
-export default function Home(props) {
+export default function Home({ experiences }) {
   return (
     <>
       <div className={styles.firstSlideContainer}>
@@ -51,7 +51,7 @@ export default function Home(props) {
             </p>
           </div>
           <div className={styles.sliderContainer}>
-            <Slider items={props.experiences} />
+            <Slider items={experiences} />
           </div>
         </div>
       </div>

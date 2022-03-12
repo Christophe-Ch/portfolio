@@ -1,0 +1,52 @@
+@import "../variables.scss";
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background: $dark;
+  padding-top: 20vh;
+  padding-bottom: 5rem;
+
+  .title {
+    text-transform: uppercase;
+    margin: 5rem 0;
+  }
+
+  .body {
+    width: 90%;
+    margin: auto;
+
+    p {
+      margin: 1rem 0;
+    }
+
+    img {
+      max-width: 75%;
+      margin: 1rem 0;
+    }
+  }
+
+  .link {
+    display: block;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .container {
+    .title {
+      text-align: center;
+    }
+
+    .body {
+      p {
+        margin: 3rem 0;
+      }
+
+      img {
+        display: block;
+        margin: 4rem auto;
+      }
+    }
+  }
+}

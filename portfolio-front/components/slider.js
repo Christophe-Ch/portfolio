@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function Slider(props) {
+export default function Slider({items}) {
   return (
     <div className={styles.sliderContainer}>
       <Swiper
@@ -16,7 +16,7 @@ export default function Slider(props) {
         navigation
         modules={[Pagination, Navigation]}
       >
-        {props.items.map((item) => (
+        {items.map((item) => (
           <SwiperSlide className={styles.slide} key={item.slug}>
             <div>
               <span className={styles.title}>{item.title}</span>

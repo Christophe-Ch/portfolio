@@ -34,8 +34,6 @@ document.querySelectorAll(".wireframe-text").forEach((el) => {
   });
 });
 
-console.log(texts);
-
 window.addEventListener("scroll", () => {
   texts.forEach(({ el, baseY, prop }) => animate(el, baseY, prop));
 });
