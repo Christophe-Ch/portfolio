@@ -25,15 +25,17 @@ export default function Nav() {
           </Link>
           <span></span>
           <Link href="/projects">
-            <a>projects</a>
+            <a className={cn({ [styles.active]: router.pathname.startsWith("/projects") })}>
+              projects
+            </a>
           </Link>
           <span></span>
           <Link href="/blog">
-            <a>blog</a>
+            <a className={cn({ [styles.active]: router.pathname.startsWith("/articles") })}>blog</a>
           </Link>
           <span></span>
           <Link href="/contact">
-            <a>contact</a>
+            <a className={cn({ [styles.active]: router.pathname == "/contact" })}>contact</a>
           </Link>
         </nav>
       </div>

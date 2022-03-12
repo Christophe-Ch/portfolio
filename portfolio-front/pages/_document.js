@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700" />
+            href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700&display=optional" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"

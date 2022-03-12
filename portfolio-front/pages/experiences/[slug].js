@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const result = await fetchAPI(`/experiences`, {
-    filters: { slug: params.slug },
+    slug: params.slug,
   });
 
   const experience = result.data[0].attributes;

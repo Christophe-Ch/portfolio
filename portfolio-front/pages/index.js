@@ -8,7 +8,7 @@ export default function Home({ experiences }) {
     <>
       <div className={styles.firstSlideContainer}>
         <div className={styles.titleContainer}>
-          <span>Hi, I'm</span>
+          <span>Hi, I&apos;m</span>
           <h1>
             Christophe
             <br />
