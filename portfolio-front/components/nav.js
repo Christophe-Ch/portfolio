@@ -8,7 +8,7 @@ export default function Nav() {
 
   return (
     <>
-      <input type="checkbox" className={styles.toggleMenu} />
+      <input type="checkbox" id="menu-input" className={styles.toggleMenu} />
 
       <div className={styles.hamburgerButton}>
         <span></span>
@@ -19,26 +19,30 @@ export default function Nav() {
         <span className={styles.navTitle}>MENU</span>
         <nav>
           <Link href="/">
-            <a className={cn({ [styles.active]: router.pathname == "/" })}>
+            <a className={cn({ [styles.active]: router.pathname == "/" })} onClick={closeMenu}>
               home
             </a>
           </Link>
           <span></span>
           <Link href="/projects">
-            <a className={cn({ [styles.active]: router.pathname.startsWith("/projects") })}>
+            <a className={cn({ [styles.active]: router.pathname.startsWith("/projects") })} onClick={closeMenu}>
               projects
             </a>
           </Link>
           <span></span>
-          <Link href="/blog">
-            <a className={cn({ [styles.active]: router.pathname.startsWith("/articles") })}>blog</a>
+          <Link href="/articles">
+            <a className={cn({ [styles.active]: router.pathname.startsWith("/articles") })} onClick={closeMenu}>blog</a>
           </Link>
           <span></span>
           <Link href="/contact">
-            <a className={cn({ [styles.active]: router.pathname == "/contact" })}>contact</a>
+            <a className={cn({ [styles.active]: router.pathname == "/contact" })} onClick={closeMenu}>contact</a>
           </Link>
         </nav>
       </div>
     </>
   );
+}
+
+const closeMenu = () => {
+  document.getElementById("menu-input").checked = false;
 }

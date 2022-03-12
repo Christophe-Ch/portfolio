@@ -25,12 +25,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "projects": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::project.project",
-      "inversedBy": "skills"
     }
   }
 }

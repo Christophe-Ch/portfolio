@@ -1,0 +1,137 @@
+@import "./variables.scss";
+
+.mainContainer {
+  height: 100vh;
+  width: 100vw;
+  min-height: 30rem;
+
+  background: linear-gradient($dark, $primaryGrey);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .titleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    h1 {
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: fit-content;
+
+      font-weight: bold;
+
+      line-height: 2rem;
+    }
+  }
+
+  .scrollInfoContainer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      font-weight: 100;
+      margin-bottom: 1rem;
+    }
+
+    .arrowDown {
+      fill: $mainColor;
+    }
+  }
+}
+
+.searchContainer {
+  background: linear-gradient($primaryGrey, 90%, $dark);
+  padding: 5rem 0;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+  }
+
+  .inputs {
+    margin: 6rem 0 4rem 0;
+
+    .inputGroup {
+      display: inline-block;
+      margin: 1.5rem 0.8rem;
+
+      input[type="checkbox"] {
+        display: none;
+
+        &:checked + label {
+          background: $action;
+          border: 2px solid $action;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        user-select: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        border: 2px solid $semiTransparentAction;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .mainContainer {
+    .titleContainer {
+      .subtitle {
+        left: 50%;
+      }
+    }
+  }
+
+  .searchContainer {
+    display: flex;
+    padding-bottom: 5rem;
+    height: calc(100vh - 10rem);
+    align-items: center;
+
+    .searchPanel {
+      display: inline-block;
+      width: calc(50%);
+
+      text-align: center;
+
+      h2 {
+        font-size: 5rem;
+      }
+
+      .inputs {
+        margin-top: 0;
+      }
+    }
+
+    .sliderContainer {
+      width: calc(50% - 12vw);
+      display: inline-block;
+
+      padding: 0 6vw;
+    }
+  }
+}

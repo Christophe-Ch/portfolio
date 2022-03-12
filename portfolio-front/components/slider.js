@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function Slider({items}) {
+export default function Slider({ items }) {
   return (
     <div className={styles.sliderContainer}>
       <Swiper
@@ -35,7 +35,7 @@ export default function Slider({items}) {
             {item.skills && item.skills.length > 0 && (
               <div className={styles.skills}>
                 {item.skills.map((skill) => (
-                  <span key={skill.name}>{skill.name}</span>
+                  <span key={skill}>{skill}</span>
                 ))}
               </div>
             )}
